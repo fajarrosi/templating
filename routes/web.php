@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/data-tables', function () {
     return view('datatable');
 });
+
+Route::post('pertanyaan/update', 'PertanyaanController@update')->name('prt.update');
+Route::get('pertanyaan/destroy/{id}', 'PertanyaanController@destroy');
+Route::resource('/pertanyaan','PertanyaanController');
+
+Route::post('jawaban/update', 'JawabanController@update')->name('jwb.update');
+Route::get('jawaban/destroy/{id}', 'JawabanController@destroy');
+Route::resource('/jawaban','JawabanController');
